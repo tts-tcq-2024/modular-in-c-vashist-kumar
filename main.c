@@ -21,7 +21,7 @@ typedef struct {
     enum MinorColor minorColor;
 } ColorPair;
 
-void ColorPairToString(const ColorPair* colorPair, char* buffer) {
+void PrintColorPairToString(const ColorPair* colorPair, char* buffer) {
     sprintf(buffer, "%s %s",
         MajorColorNames[colorPair->majorColor],
         MinorColorNames[colorPair->minorColor]);
@@ -48,7 +48,7 @@ void testNumberToPair(int pairNumber,
 {
     ColorPair colorPair = GetColorFromPairNumber(pairNumber);
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
-    ColorPairToString(&colorPair, colorPairNames);
+    PrintColorPairToString(&colorPair, colorPairNames);
     printf("Got pair %s\n", colorPairNames);
     assert(colorPair.majorColor == expectedMajor);
     assert(colorPair.minorColor == expectedMinor);
