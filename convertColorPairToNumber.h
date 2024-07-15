@@ -1,4 +1,4 @@
-#include <colorPairDataStructures.h>
+#include "colorPairDataStructures.h"
 
 int GetPairNumberFromColor(const ColorPair* colorPair) {
     return colorPair->majorColor * numberOfMinorColors +
