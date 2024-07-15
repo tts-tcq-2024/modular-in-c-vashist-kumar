@@ -8,3 +8,8 @@ const char* MajorColorNames[] = {
 const char* MinorColorNames[] = {
     "Blue", "Orange", "Green", "Brown", "Slate"
 };
+
+typedef struct {
+    enum MajorColor majorColor;
+    enum MinorColor minorColor;
+} ColorPair;
