@@ -1,5 +1,5 @@
 
-ColorPair GetColorFromPairNumber(int pairNumber) {
+ColorPair GetColorPairFromGivenNumber(int pairNumber) {
     ColorPair colorPair;
     int zeroBasedPairNumber = pairNumber - 1;
     colorPair.majorColor = 
