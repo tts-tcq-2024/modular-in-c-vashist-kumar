@@ -5,11 +5,11 @@
 #include "convertNumberToColorPair.h"
 
 
-void testNumberToPair(int pairNumber,
+void testNumberToColorPair(int pairNumber,
     enum MajorColor expectedMajor,
     enum MinorColor expectedMinor)
 {
-    ColorPair colorPair = GetColorFromPairNumber(pairNumber);
+    ColorPair colorPair = GetColorPairFromNumber(pairNumber);
     char colorPairNames[MAX_COLORPAIR_NAME_CHARS];
     PrintColorPairToString(&colorPair, colorPairNames);
     printf("Got pair %s\n", colorPairNames);
@@ -17,7 +17,7 @@ void testNumberToPair(int pairNumber,
     assert(colorPair.minorColor == expectedMinor);
 }
 
-void testPairToNumber(
+void testColorPairToNumber(
     enum MajorColor major,
     enum MinorColor minor,
     int expectedPairNumber)
@@ -25,17 +25,17 @@ void testPairToNumber(
     ColorPair colorPair;
     colorPair.majorColor = major;
     colorPair.minorColor = minor;
-    int pairNumber = GetPairNumberFromColor(&colorPair);
+    int pairNumber = GetNumberFromColorPair(&colorPair);
     printf("Got pair number %d\n", pairNumber);
     assert(pairNumber == expectedPairNumber);
 }
 
 int main() {
-    testNumberToPair(4, WHITE, BROWN);
-    testNumberToPair(5, WHITE, SLATE);
+    testNumberToColorPair(4, WHITE, BROWN);
+    testNumberToColorPair(5, WHITE, SLATE);
 
-    testPairToNumber(BLACK, ORANGE, 12);
-    testPairToNumber(VIOLET, SLATE, 25);
+    testColorPairToNumber(BLACK, ORANGE, 12);
+    testColorPairToNumber(VIOLET, SLATE, 25);
 
     return 0;
 }
